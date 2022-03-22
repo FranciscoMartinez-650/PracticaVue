@@ -4,9 +4,7 @@
     <h2>{{customTitle}}</h2>    
     <p> {{counter}} <sup>2</sup> = {{counter*counter}} </p>
 <!-- No hace falta llamar un metodo simplemente como una propiedad-->
-    <p> {{counter}} <sup>2</sup> = {{squareCounter}} </p>
-
-    
+    <p> {{counter}} <sup>2</sup> = {{squareCounter}} </p>    
         <button  v-on:click="increase()" id="suma">+1</button>
         <button v-on:click="decrease()" id="resta">-1</button>
 </div>

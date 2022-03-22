@@ -2,7 +2,6 @@
   <img alt="Vue logo" src="./assets/logo.png">
   <Counter :start="100"/>
 </template>
-
 <script>
 import Counter from './components/Counter.vue'
 //import HelloWorld from './components/HelloWorld.vue'
