@@ -1,14 +1,15 @@
 <template>
+<div>
 <!-- Diseño -->
     <h2>{{customTitle}}</h2>    
     <p> {{counter}} <sup>2</sup> = {{counter*counter}} </p>
 <!-- No hace falta llamar un metodo simplemente como una propiedad-->
     <p> {{counter}} <sup>2</sup> = {{squareCounter}} </p>
 
-    <div>
+    
         <button  v-on:click="increase()" id="suma">+1</button>
         <button v-on:click="decrease()" id="resta">-1</button>
-    </div>
+</div>
     
 </template>
 
@@ -16,10 +17,20 @@
 
 export default {
     //Propiedades de componentes
-    props: ['title'],
+       props: {
+        title: String,
+        start: {
+            type: Number,
+            default: 100,
+            // required: true
+            validator( value ) {
+                return value >= 0
+            }
+        }
+    },
     data(){
         return{
-            counter: 5,
+            counter: this.start,
             
         }
         
