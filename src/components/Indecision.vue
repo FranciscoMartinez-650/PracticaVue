@@ -23,6 +23,7 @@ export default {
         }
     },
     methods: {
+        //programación  asincrona para llamado a un http
         async getAnswer(){
             this.answer = "Pensando..."
             const {answer, image} = await fetch('https://yesno.wtf/api').then(r => r.json())
