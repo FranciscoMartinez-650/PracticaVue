@@ -5,7 +5,7 @@
     <div class="indecision-container">
         <input v-model="question" type="text" placeholder="Realiza una pregunta"/>
         <p>Recuerda utilizar el signo de interrogación que cierra(¿?)</p>
-            <div>
+            <div v-if="isValidQuestion">
                 <h2>{{question}}</h2>
                 <h1>{{answer}}</h1>
             </div>
@@ -19,15 +19,21 @@ export default {
         return{
             question: null,
             answer: null,
-            img: null
+            img: null,
+            isValidQuestion: false
         }
     },
     methods: {
-        //programación  asincrona para llamado a un http
+        //Programaci
         async getAnswer(){
             this.answer = "Pensando..."
             const {answer, image} = await fetch('https://yesno.wtf/api').then(r => r.json())
-            this.answer = answer
+            //this.answer = answer
+            if(this.answer == 'YES'){
+                this.answer = 'SI!!'
+            }else if(this.answer == 'NO'){
+                this.answer = 'No!!';
+            }
             this.img = image
         }
     },
@@ -36,6 +42,7 @@ export default {
 
             if(!value.includes('?'))
                 return
+                this.isValidQuestion = true
             this.getAnswer()
         }
     }
