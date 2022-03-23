@@ -28,12 +28,13 @@ export default {
         async getAnswer(){
             this.answer = "Pensando..."
             const {answer, image} = await fetch('https://yesno.wtf/api').then(r => r.json())
-            //this.answer = answer
-            if(this.answer == 'YES'){
+            this.answer = answer
+            if(this.answer == 'yes'){
                 this.answer = 'SI!!'
-            }else if(this.answer == 'NO'){
-                this.answer = 'No!!';
+            }else{
+                this.answer = 'no!!'
             }
+            
             this.img = image
         }
     },
