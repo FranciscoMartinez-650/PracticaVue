@@ -40,11 +40,12 @@ export default {
     },
     watch: {
         question(value, oldValue){
-
-            if(!value.includes('?'))
-                return
-                this.isValidQuestion = true
+            this.isValidQuestion = false
+            if(!value.includes('?')) return
+             
+            this.isValidQuestion = true   
             this.getAnswer()
+            
         }
     }
 }
