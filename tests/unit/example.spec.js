@@ -1,5 +1,7 @@
 //Conjunto de pruebas testu
 
+import { shallowMount } from "@vue/test-utils";
+
 describe('Example Component', ()=> {
 
   test('Debe de ser mayor a 10', () => {
@@ -11,5 +13,6 @@ describe('Example Component', ()=> {
     //Observar Resultado
     expect(value).toBeGreaterThan(10)
   })
+  
 
 })
