@@ -4,6 +4,7 @@ import { wrap } from 'module'
 
 describe('Counter Component', () => {
 
+    //Declarar wrapper para poderlo usar en cualquier sección
     let wrapper
 
 

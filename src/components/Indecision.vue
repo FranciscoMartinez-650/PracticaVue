@@ -1,4 +1,5 @@
 <template>
+<!-- div-->
 <div>
     <img v-if="img" :src="img" alt="La imagen no se proceso"/>
     <div class="bg-dark"></div>
